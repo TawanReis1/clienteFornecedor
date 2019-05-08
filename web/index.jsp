@@ -9,6 +9,7 @@
     </head>
     
     <body>
+        <a href="manufacturers.jsp">Fornecedores</a>
         <h1>JavaDB</h1>
         <h2>Clientes</h2>
         
