@@ -28,7 +28,7 @@ public class Manufacturer {
         Connection con = DriverManager.getConnection(url, "app", "app");
 
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM MANUFACTURER");
+        ResultSet rs = st.executeQuery("SELECT * FROM MANUFACTURER ORDER BY MANUFACTURER_ID");
 
         ArrayList<Manufacturer> list = new ArrayList<>();
         while (rs.next()) {

@@ -1,51 +1,86 @@
+<%-- 
+    Document   : details
+    Created on : May 10, 2019, 11:41:51 PM
+    Author     : alexandersantos
+--%>
 <%@page import="br.com.fatecpg.jdbc.Order"%>
 <%@page import="br.com.fatecpg.jdbc.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Compras - JavaDB</title>
-    </head>
-    <body>
-        <h1>JavaDB</h1>
-        <h2>Compras do cliente</h2>
-        <a href="index.jsp">Voltar</a>
+<html lang="pt-br">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>CRUD com Bootstrap 3</title>
 
-        <% try { %>
-            <% int id = Integer.parseInt(request.getParameter("id")); %>
-            <% Customer c = Customer.getCustomer(id); %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">JavaDB - Aula 12</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="manufacturers.jsp">Fornecedores</a></li>
+                    <li><a href="#">Clientes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<br>
+<br>
+<br>
+ <div id="main" class="container-fluid">
+    <% try { %>
+        <% int id = Integer.parseInt(request.getParameter("id")); %>
+        <% Customer c = Customer.getCustomer(id); %>
             
-            <% if (c != null) { %>
-                <h3>ID: <u><%= id %></u></h3>
-                <h3>Nome: <u><%= c.getName() %></u></h3>
-                <hr/>
-                
-                <table border="1">
-                    <tr>
-                        <th>Numero</th>
-                        <th>Data</th>
-                        <th>Frete</th>
-                    </tr>
-                    
-                    <% for(Order o: Order.getList(id)) { %>
-                        <tr>
-                            <td><%= o.getNum()%></td>
-                            <td><%= o.getSalesDate()%></td>
-                            <td><%= o.getShippingCost()%></td>
-                        </tr>
-                    <% } %>
-                    
-                </table>
-                
-            <% } else { %>
-                <h3>Cliente não encontrado!</h3>
-            <% } %>
-        
+    <% if (c != null) { %>
+        <h3 class="page-header">Compras do cliente - Item #<%= id %></h3>
+  
+        <div class="row">
+        <% for(Order o: Order.getList(id)) { %>
+          <div class="col-md-4">
+            <p><strong>Numero</strong></p>
+                <p><%= o.getNum()%></p>
+          </div>
+          <div class="col-md-4">
+            <p><strong>Data</strong></p>
+                <p><%= o.getSalesDate()%></p>
+          </div>
+          <div class="col-md-4">
+            <p><strong>Frete</strong></p>
+                <p><%= o.getShippingCost()%></p>
+          </div>
+          <% } %>
+       </div>
+    <% } else { %>
+        <h3>Cliente não encontrado!</h3>
+    <% } %>
 
         <% } catch (Exception e) { %>
             <h3 style="color:red"><%= e.getMessage()%></h3>
         <% }%>
-
-    </body>
+ 
+ <hr />
+ <div id="actions" class="row">
+   <div class="col-md-12">
+     <a href="index.jsp" class="btn btn-primary">Fechar</a>
+   </div>
+ </div>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
 </html>
