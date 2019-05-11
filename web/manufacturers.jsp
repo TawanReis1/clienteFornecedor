@@ -11,6 +11,11 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  <link href="css/style.css" rel="stylesheet">
 </head>
+<style>
+body {
+  background-color: #F6EFEE;
+}
+</style>
 <body> 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
