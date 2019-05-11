@@ -22,6 +22,14 @@
         }
     </style>
     <body> 
-        <%@include file="WEB-INF/jspf/header.jspf" %>
+        <%@include file="WEB-INF/jspf/header.jspf" %><br><br><br>
+        <h1>Projeto JBDC</h1>
+        <p>Esse projeto possui a finalidade de realizar uma consulta em um banco de dados e retornar informações sobre ele.</p>
+        <h1>Integrantes do grupo:</h1>
+    <ul>
+        <li>Alexander</li>
+        <li>Stefano Hayba</li>
+        <li>Tawan Reis</li>
+    </ul>
     </body>
 </html>
