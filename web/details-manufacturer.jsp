@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Details-manufacturer</title>
+        <title>Fornecedor</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet">
     </head>
@@ -30,23 +30,23 @@
 
                     <div class="row">
                         <% for(Product p: Product.getList(id)) { %>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <p><strong>ID</strong></p>
                             <i><p><%= p.getId()%></p></i>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <p><strong>Descricao</strong></p>
                             <i><p><%= p.getDescription()%></p></i>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <p><strong>Preco de Custo</strong></p>
                             <i><p><%= p.getPurcasheCost()%></p></i>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-2">
                             <p><strong>Quantidade disponivel</strong></p>
                             <i><p><%= p.getQuantityOnHand()%></p></i>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-1">
                             <p><strong>Disponivel?</strong></p>
                             <i><p><%= p.isAvailable()%></p></i>
                           </div>
@@ -62,7 +62,7 @@
          <hr />
          <div id="actions" class="row pull-left">
             <div class="col-md-6">
-             <a href="manufacturers.jsp" class="btn btn-info">Voltar</a>
+             <a href="manufacturers.jsp" class="btn btn-primary">Voltar</a>
             </div>
             <div class="col-md-6">
              <a href="index.jsp" class="btn btn-primary">Fechar</a>
