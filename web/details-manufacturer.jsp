@@ -72,7 +72,7 @@ body {
  <hr />
  <div id="actions" class="row">
    <div class="col-md-12">
-     <a href="manufacturers.jsp" class="btn btn-primary">Fechar</a>
+     <a href="index.jsp" class="btn btn-primary">Fechar</a>
    </div>
  </div>
  

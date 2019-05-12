@@ -27,7 +27,7 @@
         <p>Esse projeto possui a finalidade de realizar uma consulta em um banco de dados e retornar informações sobre ele.</p>
         <h1>Integrantes do grupo:</h1>
     <ul>
-        <li>Alexander</li>
+        <li>Alexander Santos</li>
         <li>Stefano Hayba</li>
         <li>Tawan Reis</li>
     </ul>
